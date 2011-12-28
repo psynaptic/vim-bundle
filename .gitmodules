@@ -7,3 +7,6 @@
 [submodule "bundle/gist-vim"]
 	path = bundle/gist-vim
 	url = git://github.com/mattn/gist-vim.git
+[submodule "bundle/drupal-snippets"]
+	path = bundle/drupal-snippets
+	url = git://github.com/tanarurkerem/drupal-snippets.git
