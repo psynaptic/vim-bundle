@@ -10,3 +10,6 @@
 [submodule "bundle/drupal-snippets"]
 	path = bundle/drupal-snippets
 	url = git://github.com/tanarurkerem/drupal-snippets.git
+[submodule "bundle/neocomplcache"]
+	path = bundle/neocomplcache
+	url = git://github.com/Shougo/neocomplcache.git
