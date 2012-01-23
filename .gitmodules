@@ -48,4 +48,4 @@
 	url = git://github.com/chrismetcalf/vim-yankring.git
 [submodule "bundle/vim-drupal"]
 	path = bundle/vim-drupal
-	url = http://git.drupal.org/project/vimrc.git
+	url = psynaptic@git.drupal.org:project/vimrc.git
