@@ -34,9 +34,6 @@
 [submodule "bundle/vim-addon-mw-utils"]
 	path = bundle/vim-addon-mw-utils
 	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
-[submodule "bundle/vim-drupal"]
-	path = bundle/vim-drupal
-	url = psynaptic@git.drupal.org:project/vimrc.git
 [submodule "bundle/vim-fugitive"]
 	path = bundle/vim-fugitive
 	url = git://github.com/tpope/vim-fugitive.git
