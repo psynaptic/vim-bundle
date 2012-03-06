@@ -46,6 +46,3 @@
 [submodule "bundle/vim-yankring"]
 	path = bundle/vim-yankring
 	url = git://github.com/chrismetcalf/vim-yankring.git
-[submodule "bundle/vim-drupal"]
-	path = bundle/vim-drupal
-	url = git@github.com:psynaptic/vim-drupal.git
