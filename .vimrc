@@ -4,7 +4,7 @@ call pathogen#helptags()
 syntax on
 set background=dark
 colorscheme solarized
-"syntax sync minlines=50         " only sync 50 lines of syntax highlighting around the cursor
+syntax sync minlines=50         " only sync 50 lines of syntax highlighting around the cursor
 set nocursorline                " don't highlight the screen line of the cursor
 set nocursorcolumn              " don't highlight the column of the cursor
 
@@ -89,5 +89,7 @@ endif
 let g:SuperTabDefaultCompletionType = "context"
 
 " set up Drupal Code Sniffer with syntastic
-let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
+"let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
+
+nmap <F4> :TagbarToggle<CR>
 
