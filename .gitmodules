@@ -58,6 +58,6 @@
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
-[submodule "trailertrash.vim"]
+[submodule "bundle/trailertrash.vim"]
 	path = trailertrash.vim
 	url = git://github.com/csexton/trailertrash.vim.git
