@@ -56,7 +56,9 @@ set showcmd               " Show (partial) command keys in the status line.
 set ruler                 " Show cursor position (line and column number).
 set number                " Show the line number for each line.
 set showmatch             " Show matching brackets/parentheses.
-set cc=80                 " Highlight column 80.
+if has('cc')
+  set cc=80               " Highlight column 80.
+endif
 
 " UI Behaviour
 set backspace=2           " Use standard backspace behavior.
