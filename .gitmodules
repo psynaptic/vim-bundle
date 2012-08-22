@@ -61,3 +61,9 @@
 [submodule "bundle/trailertrash.vim"]
 	path = trailertrash.vim
 	url = git://github.com/csexton/trailertrash.vim.git
+[submodule "bundle/closetag"]
+	path = bundle/closetag
+	url = git://github.com/vim-scripts/closetag.vim.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
