@@ -56,7 +56,7 @@
 	path = bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
 [submodule "bundle/trailertrash.vim"]
-	path = trailertrash.vim
+	path = bundle/trailertrash.vim
 	url = git://github.com/csexton/trailertrash.vim.git
 [submodule "bundle/closetag"]
 	path = bundle/closetag
