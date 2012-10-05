@@ -70,3 +70,9 @@
 [submodule "bundle/file-line"]
 	path = bundle/file-line
 	url = git://github.com/bogado/file-line.git
+[submodule "bundle/sparkup"]
+	path = bundle/sparkup
+	url = git://github.com/rstacruz/sparkup.git
+[submodule "bundle/vim-ruby"]
+	path = bundle/vim-ruby
+	url = git://github.com/vim-ruby/vim-ruby.git
