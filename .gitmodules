@@ -76,3 +76,6 @@
 [submodule "bundle/vim-ruby"]
 	path = bundle/vim-ruby
 	url = git://github.com/vim-ruby/vim-ruby.git
+[submodule "bundle/vim-twig"]
+	path = bundle/vim-twig
+	url = git://github.com/beyondwords/vim-twig.git
