@@ -79,3 +79,9 @@
 [submodule "bundle/vim-twig"]
 	path = bundle/vim-twig
 	url = git://github.com/beyondwords/vim-twig.git
+[submodule "bundle/vim-cucumber"]
+	path = bundle/vim-cucumber
+	url = git://github.com/tpope/vim-cucumber.git
+[submodule "bundle/linediff"]
+	path = bundle/linediff
+	url = git://github.com/AndrewRadev/linediff.vim.git
