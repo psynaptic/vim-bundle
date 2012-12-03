@@ -146,7 +146,7 @@ let g:yankring_history_file = '.yankring_history'
 
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
-"let snippets_dir = "~/.vim/bundle/snipmate-snippets"
+let snippets_dir = "~/.vim/bundle/snipmate-snippets"
 
 " set up Drupal Code Sniffer with syntastic
 "let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
