@@ -90,7 +90,7 @@ cnoreabbrev WQ wq
 noremap ; :
 
 " Change the leader to ",".
-let mapleader=","           " change the mapleader
+let mapleader=","
 
 " Easier split navigation.
 map <C-h> <C-w>h
