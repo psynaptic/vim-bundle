@@ -13,8 +13,10 @@ syntax sync minlines=50   " Only sync 50 lines of syntax highlighting around the
 set nocursorline          " Don't highlight the screen line of the cursor.
 set nocursorcolumn        " Don't highlight the column of the cursor.
 
-" LESS filetype support.
+" CSS preprocessor filetype support.
 au BufNewFile,BufRead *.less set filetype=css
+au BufNewFile,BufRead *.sass set filetype=css
+au BufNewFile,BufRead *.scss set filetype=css
 
 " Enable snipMate's HTML snippets to work in PHP files.
 au BufNewFile,BufRead *.php set filetype=php.html
