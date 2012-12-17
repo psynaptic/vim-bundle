@@ -151,3 +151,7 @@ let snippets_dir = "~/.vim/bundle/snipmate-snippets"
 " set up Drupal Code Sniffer with syntastic
 "let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
 
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['css'] }
+
