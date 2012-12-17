@@ -9,14 +9,14 @@ syntax on                 " Enable syntax highlighting.
 set background=dark       " Use a dark background with light text.
 se t_Co=256               " 256 colors.
 colorscheme solarized     " Use the Solarized color scheme.
-syntax sync minlines=50   " Only sync 50 lines of syntax highlighting around the cursor.
 set nocursorline          " Don't highlight the screen line of the cursor.
 set nocursorcolumn        " Don't highlight the column of the cursor.
+autocmd BufEnter * :syntax sync fromstart " Set syntax sync to fromstart.
 
 " CSS preprocessor filetype support.
-au BufNewFile,BufRead *.less set filetype=css
-au BufNewFile,BufRead *.sass set filetype=css
-au BufNewFile,BufRead *.scss set filetype=css
+au BufNewFile,BufRead *.less set filetype=less.css
+au BufNewFile,BufRead *.sass set filetype=sass.css
+au BufNewFile,BufRead *.scss set filetype=scss.css
 
 " Enable snipMate's HTML snippets to work in PHP files.
 au BufNewFile,BufRead *.php set filetype=php.html
