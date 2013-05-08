@@ -49,9 +49,6 @@
 [submodule "bundle/vim-drupal"]
 	path = bundle/vim-drupal
 	url = git://github.com/psynaptic/vim-drupal.git
-[submodule "bundle/webapi-vim"]
-	path = bundle/webapi-vim
-	url = git@github.com:mattn/webapi-vim.git
 [submodule "bundle/vim-coffee-script"]
 	path = bundle/vim-coffee-script
 	url = git://github.com/kchmck/vim-coffee-script.git
