@@ -1,16 +1,49 @@
 set nocompatible
 
-call pathogen#infect()
+filetype off
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'tanarurkerem/drupal-snippets'
+Bundle 'bogado/file-line'
+Bundle 'mattn/gist-vim'
+Bundle 'AndrewRadev/linediff.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'rstacruz/sparkup'
+Bundle 'ervandew/supertab'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'tomtom/tlib_vim'
+Bundle 'csexton/trailertrash.vim'
+Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ap/vim-css-color'
+Bundle 'tpope/vim-cucumber'
+Bundle 'psynaptic/vim-drupal'
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'garbas/vim-snipmate'
+Bundle 'beyondwords/vim-twig'
+Bundle 'chrismetcalf/vim-yankring'
+Bundle 'gmarik/vundle'
+Bundle 'mattn/webapi-vim'
 
 filetype plugin indent on
 
 " Syntax highlighting options
-syntax on                 " Enable syntax highlighting.
-set background=dark       " Use a dark background with light text.
-se t_Co=256               " 256 colors.
-colorscheme solarized     " Use the Solarized color scheme.
-set nocursorline          " Don't highlight the screen line of the cursor.
-set nocursorcolumn        " Don't highlight the column of the cursor.
+syntax on                         " Enable syntax highlighting.
+set background=dark               " Use a dark background with light text.
+se t_Co=256                       " 256 colors.
+silent! colorscheme solarized     " Use the Solarized color scheme.
+set nocursorline                  " Don't highlight the screen line of the cursor.
+set nocursorcolumn                " Don't highlight the column of the cursor.
 autocmd BufEnter * :syntax sync fromstart " Set syntax sync to fromstart.
 
 " CSS preprocessor filetype support.
@@ -123,14 +156,14 @@ endif
 
 " Status line
 if has('statusline')
-  set laststatus=2                               " enable statusline
-  set statusline=                                " clear statusline
-  set statusline+=%1*%{fugitive#statusline()}%*  " git info
-  set statusline+=%2*\ %<%t\ %*                  " filename
-  set statusline+=%3*%m%*                        " modified flag
-  set statusline+=%4*%=%5l%*                     " current line
-  set statusline+=%4*/%L%*                       " total lines
-  set statusline+=%4*%4c\ %*                     " column number
+  set laststatus=2                                                              " enable statusline
+  set statusline=                                                               " clear statusline
+  set statusline+=%1*%{exists('g:loaded_fugitive')?fugitive#statusline():''}%*  " git info
+  set statusline+=%2*\ %<%t\ %*                                                 " filename
+  set statusline+=%3*%m%*                                                       " modified flag
+  set statusline+=%4*%=%5l%*                                                    " current line
+  set statusline+=%4*/%L%*                                                      " total lines
+  set statusline+=%4*%4c\ %*                                                    " column number
 endif
 
 " Jump to the last position when reopening a file.
