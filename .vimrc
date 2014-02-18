@@ -32,7 +32,6 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'garbas/vim-snipmate'
 Bundle 'beyondwords/vim-twig'
 Bundle 'chrismetcalf/vim-yankring'
-Bundle 'gmarik/vundle'
 Bundle 'mattn/webapi-vim'
 
 filetype plugin indent on
