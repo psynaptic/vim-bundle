@@ -6,33 +6,65 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'git://git.wincent.com/command-t.git'
-Bundle 'vim-scripts/closetag.vim'
-Bundle 'tanarurkerem/drupal-snippets'
-Bundle 'bogado/file-line'
-Bundle 'mattn/gist-vim'
-Bundle 'AndrewRadev/linediff.vim'
-Bundle 'tpope/vim-markdown'
-Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'rstacruz/sparkup'
-Bundle 'ervandew/supertab'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'tomtom/tcomment_vim'
-Bundle 'tomtom/tlib_vim'
-Bundle 'csexton/trailertrash.vim'
+
+" SnipMate
 Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'ap/vim-css-color'
-Bundle 'tpope/vim-cucumber'
-Bundle 'psynaptic/vim-drupal'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-ruby/vim-ruby'
+Bundle 'tomtom/tlib_vim'
 Bundle 'garbas/vim-snipmate'
-Bundle 'beyondwords/vim-twig'
+""Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
+
+" Programming helpers
+Bundle 'vim-scripts/closetag.vim'
+""Bundle 'spf13/vim-autoclose'
+Bundle 'tomtom/tcomment_vim'
+Bundle 'csexton/trailertrash.vim'
+Bundle 'AndrewRadev/linediff.vim'
+"Bundle 'rstacruz/sparkup'
 Bundle 'chrismetcalf/vim-yankring'
+Bundle 'ervandew/supertab'
+Bundle 'godlygeek/tabular'
+
+" UI
+Bundle 'bling/vim-airline'
+
+" Navigation
+Bundle 'git://git.wincent.com/command-t.git'
+Bundle 'majutsushi/tagbar'
+Bundle 'bogado/file-line'
+
+" Language support
+
+""Bundle 'spf13/PIV'
+Bundle 'vim-scripts/DoxygenToolkit.vim'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'beyondwords/vim-twig'
+Bundle 'moll/vim-node'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'ap/vim-css-color'
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-cucumber'
+
+" Drupal
+Bundle 'git://drupalcode.org/project/vimrc.git', {'rtp': 'bundle/vim-plugin-for-drupal'}
+Bundle 'tanarurkerem/drupal-snippets'
+
+" Services
 Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
+Bundle 'tpope/vim-fugitive'
+
+" Colorschemes
+Bundle 'morhetz/gruvbox'
+Bundle 'nanotech/jellybeans.vim'
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'sjl/badwolf'
+Bundle 'tomasr/molokai'
+Bundle 'vim-scripts/peaksea'
+Bundle 'jonathanfilip/vim-lucius'
+Bundle 'twerth/ir_black'
 
 filetype plugin indent on
 
@@ -49,6 +81,12 @@ autocmd BufEnter * :syntax sync fromstart " Set syntax sync to fromstart.
 au BufNewFile,BufRead *.less set filetype=less.css
 au BufNewFile,BufRead *.sass set filetype=sass.css
 au BufNewFile,BufRead *.scss set filetype=scss.css
+
+au BufNewFile,BufRead .agnostic_profile set filetype=sh
+au BufNewFile,BufRead .shell_functions set filetype=sh
+au BufNewFile,BufRead .bash_functions set filetype=sh
+au BufNewFile,BufRead .bash_aliases set filetype=sh
+let g:is_bash = 1
 
 " Enable snipMate's HTML snippets to work in PHP files.
 au BufNewFile,BufRead *.php set filetype=php.html
@@ -100,8 +138,7 @@ set scrolloff=2           " Always show N lines above and below cursor (context)
 set linebreak             " Break lines when appropriate.
 set clipboard=unnamed     " Always use the system keyboard.
 set pastetoggle=<F2>      " Set key command to use as the paste mode toggle.
-set history=1000           " Number of commands to remember.
-set title                 " Set the title of the terminal application.
+set history=1000          " Number of commands to remember.
 
 " Tabs and Indentation
 set expandtab             " Convert tabs to spaces.
@@ -117,6 +154,9 @@ cnoreabbrev W w
 cnoreabbrev Wq wq
 cnoreabbrev Q q
 cnoreabbrev WQ wq
+
+" Relative :edit paths
+set autochdir
 
 " Change the command prefix to avoid pressing shift too much.
 noremap ; :
@@ -148,6 +188,7 @@ nnoremap g* g*zz
 nnoremap g# g#zz
 
 " Persistent undo (vim 7.3 and later)
+silent !mkdir ~/.vim/.undo > /dev/null 2>&1
 if exists('&undofile') && !&undofile
   set undodir=~/.vim/.undo
   set undofile
@@ -165,25 +206,40 @@ if has('statusline')
   set statusline+=%4*%4c\ %*                                                    " column number
 endif
 
-" Jump to the last position when reopening a file.
+" Jump to the last position when reopening a file
 if has("autocmd")
   au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
     \| exe "normal g'\"" | endif
 endif
 
-let g:SuperTabDefaultCompletionType = "context"
+" Disable folding from PIV
+let g:DisableAutoPHPFolding = 1
+
+"let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
+"let g:SuperTabDefaultCompletionType = 'context'
+set completeopt=menu,longest
+let g:SuperTabDefaultCompletionType = 'context'
+let g:SuperTabCompletionContexts = ['s:ContextText', 's:ContextDiscover']
+let g:SuperTabLongestHighlight=1
+let g:SuperTabLongestEnhanced=1
 
 let g:yankring_history_dir = '$HOME/.vim'
 let g:yankring_history_file = '.yankring_history'
 
 let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
 
-let snippets_dir = "~/.vim/bundle/snipmate-snippets"
-
 " set up Drupal Code Sniffer with syntastic
 "let g:syntastic_phpcs_conf=" --standard=DrupalCodingStandard --extensions=php,module,inc,install,test,profile,theme"
 
 let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
-                           \ 'passive_filetypes': ['css'] }
+                           \ 'passive_filetypes': ['css', 'module', 'install', 'inc', 'php'] }
+
+set wrap
+
+set keywordprg=~/bin/php.net.sh
+command! -nargs=1 Silent
+  \ | execute ':silent !'.<q-args>
+  \ | execute ':redraw!'
+autocmd FileType php nnoremap K :Silent ~/bin/php.net.sh <cword> <CR>
 
