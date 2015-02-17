@@ -56,14 +56,7 @@ Bundle 'mattn/gist-vim'
 Bundle 'tpope/vim-fugitive'
 
 " Colorschemes
-Bundle 'morhetz/gruvbox'
-Bundle 'nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
-Bundle 'sjl/badwolf'
-Bundle 'tomasr/molokai'
-Bundle 'vim-scripts/peaksea'
-Bundle 'jonathanfilip/vim-lucius'
-Bundle 'twerth/ir_black'
 
 filetype plugin indent on
 
