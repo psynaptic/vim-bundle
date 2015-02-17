@@ -2,10 +2,9 @@ set nocompatible
 
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
+" You must init submodules on install for this to work
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
-
-Bundle 'gmarik/vundle'
 
 " SnipMate
 Bundle 'MarcWeber/vim-addon-mw-utils'
